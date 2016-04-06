@@ -35,8 +35,7 @@ public class Read_Write_file {
             lis.add(i+"aa");
         }
         FileWriter writer = new FileWriter(write_file,true);
-        BufferedWriter bw;
-        bw = new BufferedWriter(writer);
+        BufferedWriter bw = new BufferedWriter(writer);
         bw.write(s.toString());
         //write list
         bw.write(lis.toString());

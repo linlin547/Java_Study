@@ -4,8 +4,8 @@ import java.util.*;
 
 /**
  * Arrays的asList()方法 可以将数组转为List,8种基本数据类型不行
- * List的toArray()返回Object数组;
- * List的toArray(T[] a)返回包含此列表中所有元素的数组
+ * toArray()返回Object数组;
+ * toArray(T[] a)返回包含此列表中所有元素的数组
  */
 public class Switchto_Map_List_Set_Arrays {
     private static void testArray2List() {

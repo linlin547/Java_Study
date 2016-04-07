@@ -3,7 +3,7 @@ package Collection_example;
 import java.util.*;
 
 
-public class Hashmap_List {
+public class Hashmap_list_example {
 
     public static void main(String[] args) {
 

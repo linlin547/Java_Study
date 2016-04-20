@@ -1,5 +1,6 @@
 package AnalysisYaml;
 
+import net.sf.json.JSONObject;
 import org.yaml.snakeyaml.Yaml;
 
 import javax.swing.text.html.HTMLDocument;
@@ -31,7 +32,7 @@ public class AnaYaml {
     }
 
     public  Map<String, Object> getYaml() throws IOException {
-
+        
         Yaml yaml = new Yaml();
         InputStream inputStream = new FileInputStream(YamlPath);
         Map<String, Object> map = (Map<String, Object>) yaml.load(inputStream);

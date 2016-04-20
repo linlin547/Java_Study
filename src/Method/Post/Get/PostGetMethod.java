@@ -3,6 +3,7 @@ package Method.Post.Get;
  * Created by mac-li on 16/4/19.
  */
 
+import net.sf.json.JSONObject;
 import org.apache.http.*;
 import org.apache.http.client.CookieStore;
 import org.apache.http.client.config.RequestConfig;
@@ -23,6 +24,7 @@ import java.io.InputStreamReader;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -47,7 +49,7 @@ public class PostGetMethod {
         URIBuilder uribuilder = new URIBuilder();
         uribuilder.setScheme("http");
         uribuilder.setHost(url);
-        for (Object strs: mapx.keySet()) {
+        for (Object strs : mapx.keySet()) {
             //拼接key－Value
             uribuilder.setParameter(String.valueOf(strs), String.valueOf(mapx.get(strs)));
         }
@@ -90,17 +92,18 @@ public class PostGetMethod {
             if (httpEntity != null) {
                 //读取实体数据
                 bufferedReader = new BufferedReader(new InputStreamReader(httpEntity.getContent()));
-                while ((data = bufferedReader.readLine()) != null) {
-                    System.out.printf("返回数据:");
-                    System.out.println(data);
-                }
+//                while ((data = bufferedReader.readLine()) != null) {
+//                    System.out.printf("返回数据:");
+//                    System.out.println(data);
+//                }
             }
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
-            httpclient.close();
-            response.close();
-
+            if (bufferedReader == null) {
+                httpclient.close();
+                response.close();
+            }
         }
         return bufferedReader;
     }
@@ -132,17 +135,17 @@ public class PostGetMethod {
     }
 
     public static void main(String[] args) throws IOException, URISyntaxException {
-//        PostGetMethod testclient = new PostGetMethod();
-//        Map<Object, Object> mapp = new HashMap<>();
-//        mapp.put("xx", "xx");
+        PostGetMethod testclient = new PostGetMethod();
+        Map<Object, Object> mapp = new HashMap<>();
+        mapp.put("xx", "xx");
+        mapp.put("xx", "xx");
+//        BufferedReader stringBuffer = testclient.postUrl("http://xx", mapp);
+//        System.out.println(stringBuffer.readLine());
+        //reUri不需要传递http:// 会自动拼接
+        URI ll = testclient.reUri("xx",mapp);
+        //假设返回数据类型需要转为json
+        JSONObject jsonObject = JSONObject.fromObject(testclient.getUrl(ll).readLine());
+        System.out.println(jsonObject.get("message"));
 
-//        mapp.put("xx", "xxx");
-//        mapp.put("xx", "xxx");
-//        mapp.put("xx", "1");
-//        mapp.put("xx", "xxx");
-//        mapp.put("xx", "xxx");
-////        testclient.postUrl("http://xxx.do", mapp);
-//        URI ll = testclient.reUri("xxx.do",mapp);
-//        System.out.println(testclient.getUrl(ll).toString());
     }
 }

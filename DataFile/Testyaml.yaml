@@ -1,0 +1,16 @@
+URL:
+  confirm: http://apitest.mobike.com/mobike-api/schedu/confirmation.do
+BKO:
+  latitude: 40.00923665364584
+  longitude: 116.3496961805556
+  isactive: 1
+  esc: 1111111
+  bikeid: 0100010001
+  userid: "1590151646726144406609"
+BKT:
+  latitude: 40.00923665364584
+  longitude: 116.3496961805556
+  isactive: 1
+  esc: 1111111
+  bikeid: 0100010000
+  userid: "1590151646726144406609"

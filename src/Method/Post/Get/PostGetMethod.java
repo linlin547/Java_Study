@@ -57,7 +57,7 @@ public class PostGetMethod {
     }
 
     public BufferedReader getUrl(URI url) throws URISyntaxException, IOException {
-        //URL需要重新做拼接
+        //URL需要重新做拼接，调用reUri(String url, Map<Object, Object> mapx)
         //Get
         HttpGet httpget = new HttpGet(url);
         httpget.setConfig(requestConfig);

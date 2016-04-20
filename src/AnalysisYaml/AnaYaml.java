@@ -22,8 +22,8 @@ public class AnaYaml {
 //        URL xmlpath = this.getClass().getClassLoader().getResource("");
 //        System.out.println(xmlpath);
         //第二种：获取项目路径
-        File directory = new File("");// 参数为空
-        String courseFile = directory.getCanonicalPath();
+        // 参数为空
+        String courseFile = new File("").getCanonicalPath();
         YamlPath = courseFile+File.separator+Yamlpathfile;
         System.out.println(courseFile);
         System.out.println(YamlPath);

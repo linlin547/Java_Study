@@ -43,7 +43,7 @@ public class BufferReaderWriter {
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
-            if (bufferedWriter != null) {//没弄明白为什么不等于null,难道是有异常导致对象为null？
+            if (bufferedWriter != null) {//没弄明白为什么不等于null,难道有异常导致对象为空才会这么写？
                 bufferedWriter.close();
             }
 

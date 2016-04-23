@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * 说实话，还是感觉python的多线程写起来舒服些啊
  * Runnable
  * synchronized 对象锁
  * wait 线程阻塞

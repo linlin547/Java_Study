@@ -1,1 +1,45 @@
+简单梳理一下流程，网上总说纷云，可能确实每个人的方法都不一样，总之我看的好痛苦。。。。。
+一.打开eclipse－>help－>install new software...
 
+二.add...->弹出框
+    1.输入name
+    2.Location:http://beust.com/eclipse
+    3.选择加载的TestNG 直接一步步安装
+三.eclipse->
+    1.被测试项目上右键/在包上右键(会直接完成步骤5的信息填写)->
+    2.new->
+    3.other....->
+    4.选择TestNG class->
+    5.next->
+        输入信息:
+            1.Source folder:项目
+            2.Package name:项目下的包
+            3.创建测试类的名字
+            4.Annotations:可以选择需要增加的测试方法
+            5.XML suite file:输入testng.xml --testNG需要的配置文件，也可以自己创建
+四.添加TestNG包
+    1.TestNG包引入项目:
+        1.被测试项目右键->
+        2.Build Path->
+        3.Add Librays...->
+            1.选择TestNG->
+            2.Next->
+            3.Finish
+    2.TestNG包添加到Java Build Path
+        1.被测试项目右键->
+        2.Build Path->
+        3.Configure Build path...->
+            1.左侧栏目Java Build Path->
+            2.点击Add External JARS...->
+            3.选择TestNG的jar包
+            4.点击ok
+至此TestNG环境搞定，这么简单的事情，被网上的各位大神扯的晕乎了几个小时才搞定，浪费生命了。。。。
+
+五.TestNG运行：
+    1.编写生成的test类
+    2.配置testng.xml
+    3.运行:testng.xml->Run As->TestNG Suite
+    4.如果通过项目新建的TestNG会在当前目录下见到测试报告(/test-output目录)
+    5.如果通过项目下的包新建的TestNG也是一个位置，但是我在mac的eclipse没看到，实际上已经创建了，需要去目录下找
+六.推荐个TestNG的网站：
+    基础很全：http://www.yiibai.com/testng/20130913292.html
